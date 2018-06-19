@@ -70,13 +70,15 @@ L.Icon.Default.include({
 
 // Retrieve icon option values from CSS (icon or shadow).
 function _detectIconOptions(className, imagePath) {
-	var el = L.DomUtil.create('div',  className),
+	var el = L.DomUtil.create('div',  className, document.body),
 	    urlsContainer = _getBkgImageOrCursor(el),
 	    urls = _extractUrls(urlsContainer, imagePath),
 	    iconX = _getStyleInt(el, 'width'),
 	    iconY = _getStyleInt(el, 'height'),
 	    anchorNX = _getStyleInt(el, 'margin-left'),
 	    anchorNY = _getStyleInt(el, 'margin-top');
+
+	el.parentNode.removeChild(el);
 
 	return {
 		Url: urls[0],
@@ -88,9 +90,11 @@ function _detectIconOptions(className, imagePath) {
 
 // Retrieve anchor option values from CSS (popup or tooltip).
 function _detectDivOverlayOptions(className) {
-	var el = L.DomUtil.create('div', className),
+	var el = L.DomUtil.create('div', className, document.body),
 	    anchorX = _getStyleInt(el, 'margin-left'),
 	    anchorY = _getStyleInt(el, 'margin-top');
+
+	el.parentNode.removeChild(el);
 
 	return {
 		Anchor: [anchorX, anchorY]
