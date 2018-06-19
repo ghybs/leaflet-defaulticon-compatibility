@@ -18,7 +18,7 @@ export default [{
 	],
     plugins: [
         copy({
-			'node_modules/leaflet/dist/images': 'dist/images',
+			//'node_modules/leaflet/dist/images': 'dist/images',
             //verbose: true
         }),
     ],
@@ -38,7 +38,7 @@ export default [{
 	],
     plugins: [
         copy({
-			'node_modules/leaflet/dist/images': 'dist/images',
+			//'node_modules/leaflet/dist/images': 'dist/images',
             //verbose: true
 		}),
 		uglify(),
