@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8" />
+	<title>Leaflet with leaflet-defaulticon-compatibility WEBPACK demo page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		.buttonsTable {
+			border: 1px solid grey;
+			border-collapse: collapse;
+		}
+
+		.buttonsTable td,
+		.buttonsTable th {
+			padding: .5em;
+			border: 1px solid grey;
+		}
+
+		.demoVersionSelect input,
+		.demoVersionSelect label {
+			cursor: pointer;
+		}
+
+		#map {
+			height: 150px;
+			width: 90%;
+			border: 1px solid black;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<h1>Leaflet with
+		<a href="https://github.com/ghybs/leaflet-defaulticon-compatibility">leaflet-defaulticon-compatibility</a> WEBPACK demo page</h1>
+
+	<div id="map"></div>
+
+	<table class="buttonsTable">
+		<tr>
+			<th colspan="2">Demo version</th>
+			<td id="demoVersion">{{VERSION}}</td>
+		</tr>
+		<tr>
+			<th colspan="2">Loader for CSS
+				<code>url()</code>
+			</th>
+			<td id="loader">{{LOADER}}</td>
+		</tr>
+		<tr>
+			<th>Marker icon
+				<code>src</code>
+			</th>
+			<td>
+				<img id="iconImg" src="" />
+			</td>
+			<td id="iconSrc">{{ICON}}</td>
+		</tr>
+		<tr>
+			<th>Marker shadow
+				<code>src</code>
+			</th>
+			<td>
+				<img id="shadowImg" src="" />
+			</td>
+			<td id="shadowSrc">{{SHADOW}}</td>
+		</tr>
+	</table>
+
+	<fieldset class="demoVersionSelect">
+		<legend>Load demo version</legend>
+		<input type="radio" name="demoVersion" value="file" id="demoVersionFile" />
+		<label for="demoVersionFile">Webpack with file-loader (hashed file name images)</label>
+		<br />
+		<input type="radio" name="demoVersion" value="base64" id="demoVersionBase64" />
+		<label for="demoVersionBase64">Webpack with url-loader (Data URI / base64 inline images)</label>
+		<br />
+		<input type="radio" name="demoVersion" value="no-plugin" id="demoVersionNone" />
+		<label for="demoVersionNone">Webpack without leaflet-defaulticon-compatibility plugin</label>
+		<br />
+	</fieldset>
+
+
+	<script src="https://unpkg.com/urijs@^1/src/URI.min.js"></script>
+	<script src="https://unpkg.com/load-js-css@0.0.2/index.js"></script>
+
+	<script>
+
+		////////////////////////////////////////////////////////
+		// Check the currently requested demo version
+		////////////////////////////////////////////////////////
+		// Retrieve the requested versions from browser address bar.
+		var url = window.location.href;
+		// https://github.com/medialize/URI.js
+		var urlParts = URI.parse(url);
+		var queryStringParts = URI.parseQuery(urlParts.query);
+		var demoVersion = queryStringParts['demo'] || 'file'; // Default value: 'file'.
+
+		var inputEl = document.querySelector('input[value="' + demoVersion + '"]');
+
+		if (inputEl) {
+			inputEl.checked = true;
+
+			// Now load the requested demo version.
+			loadJsCss.js({ // https://github.com/ghybs/load-js-css
+				path: 'webpack-' + demoVersion + '.js',
+			});
+		} else {
+			alert('Could not find the Demo Version: "' + demoVersion + '"');
+		}
+
+		////////////////////////////////////////////////////////
+		// Reload the page with selected Demo Version when clicking on the corresponding radio input.
+		////////////////////////////////////////////////////////
+		document.querySelectorAll('input[name="demoVersion"]').forEach(
+			function (inputEl) {
+				inputEl.addEventListener('change', function (event) {
+					event.preventDefault();
+
+					var demoVersion = event.currentTarget.value;
+					var url = new URI(window.location.href).setQuery({
+						'demo': demoVersion,
+					});
+
+					window.location.href = url.toString();
+				});
+			});
+
+	</script>
+
+</body>
+
+</html>

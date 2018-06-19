@@ -1,0 +1,24 @@
+{
+  "name": "leaflet-defaulticon-compatibility-webpack-demo",
+  "version": "0.1.0",
+  "description": "Demo with webpack bundler using Leaflet and leaflet-defaulticon-compatibility plugin",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ghybs",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "leaflet": "^1.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.0",
+    "webpack-command": "^0.2.1",
+    "webpack-merge": "^4.1.3"
+  }
+}
