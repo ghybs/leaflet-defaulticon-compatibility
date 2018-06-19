@@ -11,6 +11,10 @@ Note: here, "_compatibility_" does not refer to _browser_ compatibility, but wit
 
 ## Usage
 
+```bash
+$ npm install leaflet-defaulticon-compatibility --save
+```
+
 Load this plugin CSS and JS files _after_ Leaflet CSS and JS. Then the Leaflet default icon should automatically work again, even if your build engine or framework modifies the URL's in CSS, typically:
 - webpack with [style-loader](https://github.com/webpack-contrib/style-loader) + [css-loader](https://github.com/webpack-contrib/css-loader) + [file-loader](https://github.com/webpack-contrib/file-loader) or [url-loader](https://github.com/webpack-contrib/url-loader)
 - Rails with [Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html#what-is-fingerprinting-and-why-should-i-care-questionmark)
