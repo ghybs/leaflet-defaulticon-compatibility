@@ -1,5 +1,5 @@
 # leaflet-defaulticon-compatibility
-Retrieve all Leaflet Default Icon options from CSS, in particular all icon images URL's, to improve compatibility with bundlers and frameworks that modify URL's in CSS.
+Retrieve all Leaflet Default Icon options from CSS, in particular all icon images URL's, to improve compatibility with bundlers and frameworks that modify URL's in CSS. [Demo with webpack](https://ghybs.github.io/leaflet-defaulticon-compatibility/webpack-demo.html) (and [without this plugin](https://ghybs.github.io/leaflet-defaulticon-compatibility/webpack-demo.html?demo=no-plugin)).
 
 Note: here, "_compatibility_" does not refer to _browser_ compatibility, but with build engines and frameworks that modify URL's in CSS, which often conflicts with Leaflet built-in Default Icon images automatic management. See [issue Leaflet/Leaflet#4698](https://github.com/Leaflet/Leaflet/issues/4968) for more details.
 
