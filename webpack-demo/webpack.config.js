@@ -9,7 +9,8 @@ const configBase = {
 	mode: 'production',
 	entry: path.join(__dirname, 'index.js'),
 	output: {
-		path: path.join(__dirname, '..', 'docs'),
+		path: path.join(__dirname, '..', 'docs', 'built'),
+		publicPath: 'built/', // https://webpack.js.org/configuration/output/#output-publicpath
 		//filename: 'index_bundle.js', // To be defined later on.
 	},
 	module: {
