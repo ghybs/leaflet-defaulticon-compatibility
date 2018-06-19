@@ -1,6 +1,11 @@
 # leaflet-defaulticon-compatibility
 Retrieve all Leaflet Default Icon options from CSS, in particular all icon images URL's, to improve compatibility with bundlers and frameworks that modify URL's in CSS. [Demo with webpack](https://ghybs.github.io/leaflet-defaulticon-compatibility/webpack-demo.html) (and [without this plugin](https://ghybs.github.io/leaflet-defaulticon-compatibility/webpack-demo.html?demo=no-plugin)).
 
+[![GitHub releases](https://img.shields.io/github/release/ghybs/leaflet-defaulticon-compatibility.svg?label=GitHub)](https://github.com/ghybs/leaflet-defaulticon-compatibility/releases)
+[![npm](https://img.shields.io/npm/v/leaflet-defaulticon-compatibility.svg)](https://www.npmjs.com/package/leaflet-defaulticon-compatibility)
+
+Size: < 2kB minified
+
 Note: here, "_compatibility_" does not refer to _browser_ compatibility, but with build engines and frameworks that modify URL's in CSS, which often conflicts with Leaflet built-in Default Icon images automatic management. See [issue Leaflet/Leaflet#4698](https://github.com/Leaflet/Leaflet/issues/4968) for more details.
 
 
@@ -45,3 +50,9 @@ When [that option](https://support.mozilla.org/en-US/kb/change-fonts-and-colors-
 In that case, this plugin will try to use the `cursor` rule instead which is not affected by Firefox colours override option. Therefore the plugin CSS duplicates the images path in both `background-image` and `cursor` rules.
 
 However, if you use this plugin to specify your own icon in CSS, make sure to still use `background-image` rule as the first mean to pass your images path, because [Internet Explorer always interpretes URL's in `cursor` rule as absolute](https://stackoverflow.com/questions/12454770/are-cursor-urls-relative-to-the-css-file#answer-12454924).
+
+
+## License
+[![license](https://img.shields.io/github/license/ghybs/leaflet-defaulticon-compatibility.svg)](LICENSE)
+
+leaflet-defaulticon-compatibility is distributed under the [BSD 2-clause "Simplified" License](http://choosealicense.com/licenses/bsd-2-clause/), like Leaflet.
