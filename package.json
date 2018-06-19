@@ -5,7 +5,10 @@
   "main": "dist/leaflet-defaulticon-compatibility.js",
   "module": "src/Icon.Default.compatibility.js",
   "jsnext:main": "src/Icon.Default.compatibility.js",
-  "style": "dist/leaflet-defaulticon-compatibility.css",
+	"style": "dist/leaflet-defaulticon-compatibility.css",
+	"files": [
+		"dist/**/*"
+	],
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
