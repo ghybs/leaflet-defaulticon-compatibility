@@ -1,38 +1,38 @@
 {
-  "name": "leaflet-defaulticon-compatibility",
-  "version": "0.1.1",
-  "description": "Retrieve all Leaflet Default Icon options from CSS, in particular all icon images URL's, to improve compatibility with bundlers and frameworks that modify URL's in CSS.",
-  "main": "dist/leaflet-defaulticon-compatibility.js",
-  "module": "src/Icon.Default.compatibility.js",
-  "jsnext:main": "src/Icon.Default.compatibility.js",
+	"name": "leaflet-defaulticon-compatibility",
+	"version": "0.1.1",
+	"description": "Retrieve all Leaflet Default Icon options from CSS, in particular all icon images URL's, to improve compatibility with bundlers and frameworks that modify URL's in CSS.",
+	"main": "dist/leaflet-defaulticon-compatibility.js",
+	"module": "src/Icon.Default.compatibility.js",
+	"jsnext:main": "src/Icon.Default.compatibility.js",
 	"style": "dist/leaflet-defaulticon-compatibility.css",
 	"files": [
 		"dist/**/*"
 	],
-  "scripts": {
-    "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "cd webpack-demo && npm run webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ghybs/leaflet-defaulticon-compatibility.git"
-  },
-  "keywords": [
-    "leaflet",
-    "plugin",
-    "icon",
-    "compatibility"
-  ],
-  "author": "Boris Seang",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/ghybs/leaflet-defaulticon-compatibility/issues"
-  },
-  "homepage": "https://github.com/ghybs/leaflet-defaulticon-compatibility#readme",
-  "devDependencies": {
-    "rollup": "^0.60.7",
-    "rollup-plugin-copy": "^0.2.3",
-    "rollup-plugin-uglify": "^4.0.0"
-  }
+	"scripts": {
+		"build": "rollup -c",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"webpack": "cd webpack-demo && npm run webpack"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ghybs/leaflet-defaulticon-compatibility.git"
+	},
+	"keywords": [
+		"leaflet",
+		"plugin",
+		"icon",
+		"compatibility"
+	],
+	"author": "Boris Seang",
+	"license": "BSD-2-Clause",
+	"bugs": {
+		"url": "https://github.com/ghybs/leaflet-defaulticon-compatibility/issues"
+	},
+	"homepage": "https://github.com/ghybs/leaflet-defaulticon-compatibility#readme",
+	"devDependencies": {
+		"rollup": "^0.60.7",
+		"rollup-plugin-copy": "^0.2.3",
+		"rollup-plugin-uglify": "^4.0.0"
+	}
 }
