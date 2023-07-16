@@ -7,7 +7,8 @@
 	"jsnext:main": "src/Icon.Default.compatibility.js",
 	"style": "dist/leaflet-defaulticon-compatibility.css",
 	"files": [
-		"dist/**/*"
+		"dist/**/*",
+		"src/Icon.Default.compatibility.js"
 	],
 	"scripts": {
 		"build": "rollup -c",
